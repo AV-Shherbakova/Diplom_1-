@@ -1,3 +1,4 @@
+import allure
 import pytest
 
 from praktikum.ingredient import Ingredient
@@ -12,6 +13,7 @@ class TestIngredient:
             (INGREDIENT_TYPE_SAUCE, "Chili", 120)
         ]
     )
+    @allure.title("Проверка создания ингредиента")
     def test_create_ingredient(self, ingredient_type, name, price):
         ingredient: Ingredient = Ingredient(ingredient_type, name, price)
         assert ingredient.get_type() == ingredient_type
